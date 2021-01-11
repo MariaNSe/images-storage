@@ -2,7 +2,12 @@ export interface AllImagesData {
   hasMore: boolean;
   page: number;
   pageCount: number;
-  pictures: AllImagesList[];
+  pictures: Array<ShortImageDetails>;
+}
+
+export interface ShortImageDetails {
+  cropped_picture: string;
+  id: string;
 }
 
 export interface ImageDetails {
@@ -12,9 +17,4 @@ export interface ImageDetails {
   full_picture: string;
   id: string;
   tags: string;
-}
-
-export interface AllImagesList {
-  cropped_picture: string;
-  id: string;
 }

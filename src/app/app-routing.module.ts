@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AllImagesListComponent } from './modules/all-images-list/all-images-list.component';
 
 export const appRoutes: Routes = [
   // { path: '**', component: PageNotFoundComponent },
-  { path: '', redirectTo: 'images', pathMatch: 'full' },
+  { path: '', redirectTo: 'gallery', pathMatch: 'full' },
   {
-    path: 'images',
-    component: AllImagesListComponent,
+    path: 'gallery',
+    loadChildren: () =>
+      import('./modules/images-gallery/images-gallery.module').then(m => m.ImagesGalleryModule),
   },
 ];
 

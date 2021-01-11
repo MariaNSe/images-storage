@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -6,7 +7,8 @@ import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { appRoutes } from './app-routing.module';
 import { HttpAuthInterceptor, HttpUrlInterceptor } from './core/interceptors';
-import { RemoveWhiteSpacesPipe } from './shared/pipes/remove-white-spaces.pipe';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 export const APP_PROVIDERS = [
   {
@@ -22,15 +24,16 @@ export const APP_PROVIDERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, RemoveWhiteSpacesPipe],
+  declarations: [AppComponent, HeaderComponent, FooterComponent],
   imports: [
     BrowserModule,
+    CommonModule,
     RouterModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [...APP_PROVIDERS],
   bootstrap: [AppComponent],
-  exports: [RemoveWhiteSpacesPipe],
+  exports: [],
 })
 export class AppModule {}

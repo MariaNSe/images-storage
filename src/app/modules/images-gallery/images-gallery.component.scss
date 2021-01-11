@@ -1,0 +1,11 @@
+@import 'variables';
+.grid-view {
+  margin-top: 2rem;
+  &_wrap-images {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: $light-background;
+    border: 0.1rem solid $border-color;
+    border-radius: 0.4rem;
+  }
+}

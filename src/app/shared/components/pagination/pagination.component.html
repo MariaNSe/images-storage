@@ -1,0 +1,26 @@
+  <nav aria-label="..."  *ngIf="maxPages > 1">
+    <ul class="pagination pagination-sm">
+      <li class="page-item disabled"
+          [class.disabled]="currentPage == 1"
+      >
+        <span
+          class="page-link"
+          (click)="setPage(currentPage - 1)">
+          Previous
+        </span>
+      </li>
+      <li *ngFor="let page of pages"
+          [class.active]="page == currentPage"
+          class="page-item">
+        <a class="page-link" (click)="setPage(page)">
+          {{page}}
+        </a>
+      </li>
+      <li [class.disabled]="currentPage == maxPages"
+          class="page-item">
+        <a class="page-link" (click)="setPage(currentPage + 1)">
+          Next
+        </a>
+      </li>
+    </ul>
+  </nav>
