@@ -12,9 +12,6 @@ export class PaginationComponent implements OnInit {
   @Output() onChangePage = new EventEmitter();
 
   pages: any[] = [];
-  public pageModel = {
-    page: this.currentPage,
-  };
 
   constructor() {}
 
@@ -25,8 +22,8 @@ export class PaginationComponent implements OnInit {
   }
 
   setPage(page: number): void {
-    this.pageModel.page = page;
-    this.onChangePage.emit(this.pageModel);
+    this.currentPage = page;
+    this.onChangePage.emit(this.currentPage);
   }
 
   createPages(): void {

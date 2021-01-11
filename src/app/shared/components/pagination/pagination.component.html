@@ -1,5 +1,7 @@
-<nav aria-label="..." *ngIf="maxPages > 1">
-  <ul class="pagination pagination-sm">
+<nav aria-label="..." class="container" *ngIf="maxPages > 1">
+  <ul
+    class="row d-flex flex-row flex-wrap align-content-center justify-content-center pagination pagination-md"
+  >
     <li class="page-item disabled" [class.disabled]="currentPage == 1">
       <span class="page-link" (click)="setPage(currentPage - 1)">
         Previous

@@ -1,0 +1,9 @@
+@import "variables";
+
+.wrap-header {
+  height: 12vh;
+  background: $light-background;
+  .logo {
+    max-width: 12rem;
+  }
+}
