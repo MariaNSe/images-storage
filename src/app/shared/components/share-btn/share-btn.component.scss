@@ -1,0 +1,39 @@
+@import 'variables';
+
+.wrap-share-btn {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+
+  .share-btn {
+    background: $action-btn;
+  }
+  .btn-circle {
+    width: 4.4rem;
+    height: 4.4rem;
+    display: flex;
+    align-items: center;
+    line-height: 1.428571429;
+    border-radius: 50%;
+  }
+  .dropdown-content {
+    cursor: pointer;
+    transition: transform .5s;
+    background: $main-background;
+    padding: 1rem;
+    margin: 1rem;
+    border: 0.1rem solid $border-color;
+    border-radius: 0.4rem;
+    max-width: 28rem;
+
+    a {
+      padding: 0.4rem;
+    }
+
+    img {
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-right: 0.4rem;
+    }
+  }
+}

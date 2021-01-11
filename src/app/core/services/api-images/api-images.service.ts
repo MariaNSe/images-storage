@@ -15,7 +15,7 @@ export class ApiImagesService {
     );
   }
 
-  getImageDetails(id: number): Observable<ImageDetails> {
+  getImageDetails(id: string): Observable<ImageDetails> {
     return this.httpClient.get<ImageDetails>(`${this.url}/images/${id}`);
   }
 }

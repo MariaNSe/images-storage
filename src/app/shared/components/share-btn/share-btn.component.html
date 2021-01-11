@@ -1,0 +1,32 @@
+<div class="wrap-share-btn">
+  <div class="position-relative">
+    <div
+      *ngIf="showDropdownContent"
+      class="dropdown-content d-flex flex-column"
+    >
+      <a (click)="shareLinkToTelegram()">
+        <img src="{{ telegramIcon }}" alt="Telegram" />
+        Telegram
+      </a>
+      <a (click)="shareLinkToMail()">
+        <img src="{{ mailIcon }}" alt="gmail" />
+        Email
+      </a>
+      <a (click)="shareLinkToFb()">
+        <img src="{{ fbIcon }}" alt="Facebook" />
+        Facebook
+      </a>
+      <a (click)="shareLinkToLn()">
+        <img src="{{ lnIcon }}" alt="Linkedn" />
+        Linkedn
+      </a>
+    </div>
+    <button
+      (click)="onButtonClick()"
+      class="btn btn-success btn-circle"
+      aria-label="Share"
+    >
+      <mat-icon>share</mat-icon>
+    </button>
+  </div>
+</div>

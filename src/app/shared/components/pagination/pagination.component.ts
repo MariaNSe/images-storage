@@ -6,14 +6,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./pagination.component.scss'],
 })
 export class PaginationComponent implements OnInit {
-  @Input() currentPage: number;
+  @Input() pageModel: { page: number };
   @Input() maxPages: number;
+  public currentPage: number;
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onChangePage = new EventEmitter();
 
   pages: any[] = [];
-
-  constructor() {}
 
   ngOnInit(): void {
     if (this.maxPages) {
@@ -22,8 +21,8 @@ export class PaginationComponent implements OnInit {
   }
 
   setPage(page: number): void {
-    this.currentPage = page;
-    this.onChangePage.emit(this.currentPage);
+    this.currentPage = this.pageModel.page = page;
+    this.onChangePage.emit(this.pageModel);
   }
 
   createPages(): void {

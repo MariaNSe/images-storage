@@ -1,0 +1,49 @@
+<div class="container position-relative">
+  <div
+    class="row wrap-nav-buttons mt-5 mb-5 d-flex flex-row align-items-center justify-content-between"
+  >
+    <a (click)="previousImage()" role="button">
+      <div class="d-flex align-items-center">
+        <mat-icon class="nav-icon">keyboard_arrow_left</mat-icon>
+        <span>Previous Photo</span>
+      </div>
+    </a>
+    <a (click)="nextImage()" role="button">
+      <div class="d-flex align-items-center">
+        <span>Next Photo</span>
+        <mat-icon class="nav-icon">keyboard_arrow_right</mat-icon>
+      </div>
+    </a>
+  </div>
+
+  <div class="photo row">
+    <div class="wrap-photo-mobile col-lg-8 col-sm-12 col-md-8">
+      <img
+        src="{{ currentPhoto?.full_picture | removeWhiteSpaces }}"
+        alt="Photo by {{ currentPhoto?.author }}"
+      />
+      <div class="photo-details-mobile col-lg-4 d-block d-lg-none">
+        <p>
+          <span class="font-weight-bold">Photo by:</span>
+          {{ currentPhoto?.author }}
+        </p>
+        <p>
+          <span class="font-weight-bold">Camera: </span
+          >{{ currentPhoto?.camera }}
+        </p>
+        <p class="p-0 small">{{ currentPhoto?.tags }}</p>
+      </div>
+    </div>
+    <div class="photo-details col-lg-4 d-none d-lg-block">
+      <p>
+        <span class="font-weight-bold">Photo by:</span>
+        {{ currentPhoto?.author }}
+      </p>
+      <p>
+        <span class="font-weight-bold">Camera: </span>{{ currentPhoto?.camera }}
+      </p>
+      <p class="p-0 small">{{ currentPhoto?.tags }}</p>
+    </div>
+  </div>
+</div>
+<app-share-btn [currentPhoto]="currentPhoto"> </app-share-btn>
