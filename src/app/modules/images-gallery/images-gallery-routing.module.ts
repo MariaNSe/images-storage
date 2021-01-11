@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 // import { MetaGuard } from '@ngx-meta/core';
-import {ImagesGalleryComponent} from './images-gallery.component';
+import { ImagesGalleryComponent } from './images-gallery.component';
 
 const routes: Routes = [
   {

@@ -1,9 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-pagination',
   templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.scss']
+  styleUrls: ['./pagination.component.scss'],
 })
 export class PaginationComponent implements OnInit {
   @Input() currentPage: number;
@@ -16,7 +16,7 @@ export class PaginationComponent implements OnInit {
     page: this.currentPage,
   };
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     if (this.maxPages) {

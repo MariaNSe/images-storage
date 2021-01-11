@@ -7,7 +7,9 @@ export const appRoutes: Routes = [
   {
     path: 'gallery',
     loadChildren: () =>
-      import('./modules/images-gallery/images-gallery.module').then(m => m.ImagesGalleryModule),
+      import('./modules/images-gallery/images-gallery.module').then(
+        (m) => m.ImagesGalleryModule
+      ),
   },
 ];
 

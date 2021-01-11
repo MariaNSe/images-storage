@@ -1,13 +1,13 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AllImagesData} from '../../core/services/api-images/types';
-import {ApiImagesService} from '../../core/services/api-images/api-images.service';
-import {takeUntil} from 'rxjs/operators';
-import {Subject} from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AllImagesData } from '../../core/services/api-images/types';
+import { ApiImagesService } from '../../core/services/api-images/api-images.service';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-images-gallery',
   templateUrl: './images-gallery.component.html',
-  styleUrls: ['./images-gallery.component.scss']
+  styleUrls: ['./images-gallery.component.scss'],
 })
 export class ImagesGalleryComponent implements OnInit, OnDestroy {
   public images: AllImagesData;
@@ -32,12 +32,18 @@ export class ImagesGalleryComponent implements OnInit, OnDestroy {
     const params = new URLSearchParams();
     params.set('page', page.toString());
     this.isLoading = true;
-    this.apiAllImages.getImagesByPage(this.page).pipe(takeUntil(this.destroyed$)).subscribe((imagesPerPage) => {
-      this.isLoading = false;
-      this.images = imagesPerPage;
-    }, error => {
-      this.isLoading = false;
-    });
+    this.apiAllImages
+      .getImagesByPage(this.page)
+      .pipe(takeUntil(this.destroyed$))
+      .subscribe(
+        (imagesPerPage) => {
+          this.isLoading = false;
+          this.images = imagesPerPage;
+        },
+        (error) => {
+          this.isLoading = false;
+        }
+      );
   }
 
   ngOnDestroy(): void {

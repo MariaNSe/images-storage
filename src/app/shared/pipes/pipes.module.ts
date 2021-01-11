@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
-import {RemoveWhiteSpacesPipe} from './remove-white-spaces.pipe';
+import { RemoveWhiteSpacesPipe } from './remove-white-spaces.pipe';
 
-const pipes = [
-  RemoveWhiteSpacesPipe
-];
+const pipes = [RemoveWhiteSpacesPipe];
 
 @NgModule({
   declarations: [...pipes],
